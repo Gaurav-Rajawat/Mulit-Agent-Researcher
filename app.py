@@ -4,7 +4,7 @@ from agents import build_reader_agent, build_search_agent, writer_chain, critic_
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="ResearchMind · AI Research Agent",
+    page_title="RogueAI · AI Research Agent",
     page_icon="🔬",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -22,10 +22,10 @@ html, body, [class*="css"] {
 }
 
 .stApp {
-    background: #0a0a0f;
+    background: #060816;
     background-image:
-        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(255,140,50,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(255,80,30,0.08) 0%, transparent 55%);
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(139,92,246,0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(38,208,206,0.10) 0%, transparent 55%);
 }
 
 /* ── Hide default streamlit chrome ── */
@@ -44,7 +44,7 @@ html, body, [class*="css"] {
     font-weight: 500;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: #ff8c32;
+    color: #8b5cf6;
     margin-bottom: 1rem;
     opacity: 0.9;
 }
@@ -58,7 +58,7 @@ html, body, [class*="css"] {
     margin: 0 0 1rem;
 }
 .hero h1 span {
-    color: #ff8c32;
+    color: #26d0ce;
 }
 .hero-sub {
     font-size: 1.05rem;
@@ -72,14 +72,14 @@ html, body, [class*="css"] {
 /* ── Divider ── */
 .divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,140,50,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);
     margin: 2rem 0;
 }
 
 /* ── Input card ── */
 .input-card {
     background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,140,50,0.15);
+    border: 1px solid rgba(139,92,246,0.20);
     border-radius: 16px;
     padding: 2rem 2.5rem;
     margin-bottom: 2rem;
@@ -89,7 +89,7 @@ html, body, [class*="css"] {
 /* ── Streamlit input overrides ── */
 .stTextInput > div > div > input {
     background: rgba(255,255,255,0.05) !important;
-    border: 1px solid rgba(255,140,50,0.25) !important;
+    border: 1px solid rgba(139,92,246,0.25) !important;
     border-radius: 10px !important;
     color: #f0ebe0 !important;
     font-family: 'DM Sans', sans-serif !important;
@@ -98,22 +98,22 @@ html, body, [class*="css"] {
     transition: border-color 0.2s, box-shadow 0.2s !important;
 }
 .stTextInput > div > div > input:focus {
-    border-color: #ff8c32 !important;
-    box-shadow: 0 0 0 3px rgba(255,140,50,0.12) !important;
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 0 3px rgba(139,92,246,0.12) !important;
 }
 .stTextInput > label {
     font-family: 'DM Mono', monospace !important;
     font-size: 0.72rem !important;
     letter-spacing: 0.15em !important;
     text-transform: uppercase !important;
-    color: #ff8c32 !important;
+    color: #8b5cf6 !important;
     font-weight: 500 !important;
 }
 
 /* ── Button ── */
 .stButton > button {
-    background: linear-gradient(135deg, #ff8c32 0%, #ff5a1a 100%) !important;
-    color: #0a0a0f !important;
+    background: linear-gradient(135deg, #8b5cf6 0%, #26d0ce 100%) !important;
+    color: #060816 !important;
     font-family: 'Syne', sans-serif !important;
     font-weight: 700 !important;
     font-size: 0.95rem !important;
@@ -123,12 +123,12 @@ html, body, [class*="css"] {
     padding: 0.7rem 2.2rem !important;
     cursor: pointer !important;
     transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s !important;
-    box-shadow: 0 4px 20px rgba(255,140,50,0.3) !important;
+    box-shadow: 0 4px 20px rgba(139,92,246,0.3) !important;
     width: 100%;
 }
 .stButton > button:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 28px rgba(255,140,50,0.4) !important;
+    box-shadow: 0 8px 28px rgba(139,92,246,0.4) !important;
     opacity: 0.95 !important;
 }
 .stButton > button:active {
@@ -147,8 +147,8 @@ html, body, [class*="css"] {
     transition: border-color 0.3s;
 }
 .step-card.active {
-    border-color: rgba(255,140,50,0.4);
-    background: rgba(255,140,50,0.04);
+    border-color: rgba(139,92,246,0.4);
+    background: rgba(139,92,246,0.06);
 }
 .step-card.done {
     border-color: rgba(80,200,120,0.3);
@@ -163,7 +163,7 @@ html, body, [class*="css"] {
     background: rgba(255,255,255,0.05);
     transition: background 0.3s;
 }
-.step-card.active::before { background: #ff8c32; }
+.step-card.active::before { background: #8b5cf6; }
 .step-card.done::before   { background: #50c878; }
 
 .step-header {
@@ -177,7 +177,7 @@ html, body, [class*="css"] {
     font-size: 0.68rem;
     font-weight: 500;
     letter-spacing: 0.15em;
-    color: #ff8c32;
+    color: #8b5cf6;
     opacity: 0.7;
 }
 .step-title {
@@ -193,7 +193,7 @@ html, body, [class*="css"] {
     letter-spacing: 0.1em;
 }
 .status-waiting  { color: #555; }
-.status-running  { color: #ff8c32; }
+.status-running  { color: #8b5cf6; }
 .status-done     { color: #50c878; }
 
 /* ── Result panels ── */
@@ -211,10 +211,10 @@ html, body, [class*="css"] {
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #ff8c32;
+    color: #8b5cf6;
     margin-bottom: 1rem;
     padding-bottom: 0.7rem;
-    border-bottom: 1px solid rgba(255,140,50,0.15);
+    border-bottom: 1px solid rgba(139,92,246,0.20);
 }
 .result-content {
     font-size: 0.92rem;
@@ -227,7 +227,7 @@ html, body, [class*="css"] {
 /* ── Report & feedback panels ── */
 .report-panel {
     background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,140,50,0.2);
+    border: 1px solid rgba(139,92,246,0.20);
     border-radius: 16px;
     padding: 2rem 2.5rem;
     margin-top: 1rem;
@@ -248,8 +248,8 @@ html, body, [class*="css"] {
     padding-bottom: 0.7rem;
 }
 .panel-label.orange {
-    color: #ff8c32;
-    border-bottom: 1px solid rgba(255,140,50,0.15);
+    color: #8b5cf6;
+    border-bottom: 1px solid rgba(139,92,246,0.20);
 }
 .panel-label.green {
     color: #50c878;
@@ -257,7 +257,7 @@ html, body, [class*="css"] {
 }
 
 /* ── Progress text ── */
-.stSpinner > div { color: #ff8c32 !important; }
+.stSpinner > div { color: #8b5cf6 !important; }
 
 /* ── Expander ── */
 details summary {
@@ -321,7 +321,7 @@ for key in ("results", "running", "done"):
 st.markdown("""
 <div class="hero">
     <div class="hero-eyebrow">Multi-Agent AI System</div>
-    <h1>Research<span>Mind</span></h1>
+    <h1>Rogue<span>AI</span></h1>
     <p class="hero-sub">
         Four specialized AI agents collaborate — searching, scraping, writing,
         and critiquing — to deliver a polished research report on any topic.
