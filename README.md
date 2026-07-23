@@ -1,5 +1,4 @@
-
-
+# RogueAI
 A multi-agent Deep Research system built with:
 
 - LangChain

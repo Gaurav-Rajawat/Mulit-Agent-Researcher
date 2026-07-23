@@ -57,7 +57,9 @@ class ApiKeyMiddleware(BaseHTTPMiddleware):
         return await call_next(request)
 
 
-# app.add_middleware(ApiKeyMiddleware)
+
+
+app.add_middleware(ApiKeyMiddleware)
 
 
 class ResearchRequest(BaseModel):

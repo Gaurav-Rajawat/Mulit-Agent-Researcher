@@ -2,7 +2,7 @@
 langchain
 langchain-core
 langchain-community
-langchain-google-genai
+# langchain-google-genai
 langchain-groq
 
 # Tavily Search Tool
@@ -23,7 +23,7 @@ aiohttp
 pandas
 
 # Token counting / text utils
-tiktoken
+# tiktoken
 
 # Logging / debugging (optional but recommended)
 rich
@@ -41,16 +41,13 @@ pydantic
 html5lib
 
 # RAG 
-chromadb
+# chromadb
 pypdf
 
 # API
 fastapi
 uvicorn
 python-multipart
-
-# Embeddings
-sentence-transformers
 
 # UI
 streamlit
