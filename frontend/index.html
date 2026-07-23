@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RougeAI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header>
+            <h1>RougeAI</h1>
+            <p>Uncover deep insights with AI</p>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <input type="text" id="topic-input" placeholder="What do you want to research? e.g. Quantum Computing" />
+                <button id="research-btn">Research</button>
+            </div>
+
+            <div id="loading-state" class="hidden">
+                <div class="spinner"></div>
+                <p id="loading-message">Initializing...</p>
+            </div>
+
+            <div id="error-message" class="hidden error"></div>
+
+            <div id="result-container" class="hidden">
+                <h2 id="result-topic"></h2>
+                <div id="result-content" class="markdown-body"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# ResearchMind
+
 
 A multi-agent Deep Research system built with:
 
